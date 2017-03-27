@@ -25,7 +25,7 @@ namespace LOTO_app
             foreach (string t in korisnickeVrijednosti)
             {
                 int broj = 0;
-                if (int.Parse(t, out broj) == true)
+                if (int.TryParse(t, out broj) == true)
                 {
                     if (broj >= 1 && broj <= 39)
                     {
@@ -35,6 +35,10 @@ namespace LOTO_app
                         }
                     }
                 }
+            }
+            if (UplaceniBrojevi.Count == 7)
+            {
+                ispravni = true;
             }
             return ispravni;
         }
